@@ -1,0 +1,186 @@
+---
+import GitHub from "./icons/GitHub.astro";
+import Link from "./icons/Link.astro";
+import LinkButton from "./LinkButton.astro";
+import Spring from "./icons/Spring.astro";
+import JAVA from "./icons/Java.astro";
+import JavaScript from "./icons/JavaScript.astro";
+import CSS from "./icons/CSS.astro";
+import HTML from "./icons/HTML.astro";
+import { Image } from "astro:assets";
+import MySQL from "./icons/MySQL.astro";
+import PHP from "./icons/PHP.astro";
+import Bootstrap from "./icons/Bootstrap.astro";
+import Tailwind from "./icons/Tailwind.astro";
+import FAstro from "./icons/FAstro.astro";
+const TAGS = {
+  SPRING: {
+    name: "Spring boot",
+    class:
+      "bg-[#009688] text-white dark:bg-teal-300/40 dark:border-teal-300/40 border-2",
+    icon: Spring,
+  },
+  JAVA: {
+    name: "Java",
+    class:
+      "bg-[#003159] text-white dark:bg-[#003159]/40 dark:border-[#003159]/40 border-2",
+    icon: JAVA,
+  },
+  JAVASCRIPT: {
+    name: "JavaScript",
+    class:
+      "bg-yellow-500 dark:bg-yellow-300/40 text-white dark:border-yellow-300/40  border-2",
+    icon: JavaScript,
+  },
+  CSS: {
+    name: "CSS",
+    class:
+      "bg-blue-500 dark:bg-blue-300/40 text-white dark:border-blue-300/40 border-2",
+    icon: CSS,
+  },
+  HTML: {
+    name: "HTML",
+    class:
+      "bg-orange-500 dark:bg-orange-500/40 text-white dark:border-orange-500/40 border-2",
+    icon: HTML,
+  },
+  MySQL: {
+    name: "MySQL",
+    class:
+      "bg-[#0592af] text-white dark:bg-[#162e30] dark:border-cyan-600/20 border-2",
+    icon: MySQL,
+  },
+  PHP: {
+    name: "PHP",
+    class:
+      "bg-[#8892BF] text-white dark:bg-[#8892BF]/40 dark:border-[#8892BF]/20 border-2",
+    icon: PHP,
+  },
+  BOOTSTRAP: {
+    name: "Bootstrap",
+    class:
+      "bg-[#9d77d5] text-white dark:bg-[#BB8BFF]/40 dark:border-[#BB8BFF]/20 border-2",
+    icon: Bootstrap,
+  },
+  FAstro: {
+    name: "Astro",
+    class:
+      "bg-[#FFFEFC] text-white dark:bg-[#1E1E1E]/40 dark:border-[#FF3E00]/20 border-2",
+    icon: Astro,
+  },
+  TAILWIND: {
+    name: "Tailwind CSS",
+    class: "bg-[#003159] text-white dark:border-[#003159]/20 border-2",
+    icon: Tailwind,
+  },
+  Astro: {
+    name: "Astro",
+    class: "bg-black text-white dark:border-[#FF3E00]/20 border-2",
+    icon: FAstro,
+  },
+};
+const PROJECTS = [
+  {
+    title: "Portafolio personal",
+    description: "Portafolio personal creado con Astro y Tailwind",
+    image: "/projects/porfolio.png",
+    github: "https://github.com/LeoRH123/porfolio-leonardo",
+    link: "https://porfolio-leonardo.netlify.app/",
+    tags: [TAGS.Astro, TAGS.TAILWIND],
+  },
+  {
+    title: "Bolsa de trabajo - Sistema piloto",
+    description:
+      "Desarrollo de un sistema piloto para la bolsa de trabajo, creada desde cero con Spring boot, Java, JavaScript, MySQL, PHP, CSS, HTML y Bootstrap.",
+    image: "/projects/bolsa_trabajo.png",
+    github: "",
+    link: "",
+    tags: [
+      TAGS.SPRING,
+      TAGS.JAVA,
+      TAGS.MySQL,
+      TAGS.JAVASCRIPT,
+      TAGS.CSS,
+      TAGS.HTML,
+      TAGS.BOOTSTRAP,
+      TAGS.PHP,
+    ],
+  },
+  {
+    title: "Sitio web en Strikingly",
+    description: "Sitio web punto de venta creado con Strikingly",
+    image: "/projects/Strikingly.png",
+    github: "",
+    link: "https://leotechn.mystrikingly.com/",
+    tags: [],
+  },
+  {
+    title: "Programa Java - fases de un compilador",
+    description:
+      "Programa en Java que simula las fases de un compilador, creado con Java",
+    image: "/projects/compilador.png",
+    github: "",
+    link: "",
+    tags: [TAGS.JAVA],
+  },
+];
+---
+
+<div class="flex flex-col gap-y-16">
+  {
+    PROJECTS.map(({ image, title, description, tags, github, link }) => (
+      <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
+        <div class="w-full md:w-1/2">
+          <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
+            <Image
+              alt={title}
+              class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"
+              loading="lazy"
+              width={500}
+              height={500}
+              src={image}
+            />
+          </div>
+        </div>
+
+        <div class="w-full md:w-1/2 md:max-w-lg">
+          <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100">
+            {title}
+          </h3>
+          <div class="flex flex-wrap mt-2">
+            <ul class="flex flex-wrap mb-2 gap-x-2 justify-center">
+              {tags.map((tag) => (
+                <li>
+                  <span
+                    class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 mt-2`}
+                  >
+                    {<tag.icon class="size-4" />}
+                    {tag.name}
+                  </span>
+                </li>
+              ))}
+            </ul>
+
+            <div class="mt-2 text-gray-700 dark:text-gray-400">
+              {description}
+            </div>
+            <footer class="flex items-end justify-start mt-4 gap-x-4">
+              {github && (
+                <LinkButton href={github}>
+                  <GitHub class="size-6" />
+                  Código
+                </LinkButton>
+              )}
+              {link && (
+                <LinkButton href={link}>
+                  <Link class="size-4" />
+                  Vista Previa
+                </LinkButton>
+              )}
+            </footer>
+          </div>
+        </div>
+      </article>
+    ))
+  }
+</div>

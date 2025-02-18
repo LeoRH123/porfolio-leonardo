@@ -1,0 +1,35 @@
+---
+import ExperienceItem from "./ExperienceItem.astro";
+const EXPERIENCE = [
+  {
+    date: "Actualmente...",
+    title: "Implementación de la Plataforma Moodle",
+    company: "Latinoamericana",
+    description:
+      "Liderar la implementación de la plataforma de gestión de aprendizaje Moodle para la escuela Latinoamericana, lo que transformó significativamente el entorno educativo de la institución. Este proyecto incluyó la configuración del servidor, y la capacitación tanto del personal como de los estudiantes.",
+    link: "https://www.latinoamericanabgnepue.com/",
+  },
+  //  Este proyecto incluye la integración de funcionalidades avanzadas para mejorar la experiencia del usuario y optimizar los procesos de búsqueda y postulación de empleo.
+  // "Desarrollo de un sistema piloto para la bolsa de trabajo, utilizando tecnologías como Spring boot, JavaScript, entre otras.\n"
+  //         +ubicación, tipo de empleo y experiencia requerida
+  // "Desarrollo de un sistema piloto para una bolsa de trabajo, utilizando tecnologías modernas como Spring Boot y JavaScript. Este sistema permite publicar y gestionar vacantes de empleo, facilitando a las empresas el proceso de reclutamiento. Una característica clave es la barra de búsqueda, que permite a los usuarios filtrar las ofertas de trabajo según criterios específicos como ubicación, tipo de empleo y experiencia requerida. Además, el sistema incluye un juego de memorama en el proceso de postulación, diseñado para evaluar y mejorar las habilidades cognitivas de los candidatos de manera divertida e interactiva."
+
+  {
+    date: "Agosto 2021",
+    title: "Fabrica de Software",
+    company: "MBN IT CONSULTING",
+    description:
+      "Desarrollo de un sistema piloto para una bolsa de trabajo, utilizando tecnologías como Spring Boot y JavaScript. Este sistema permite publicar y gestionar vacantes de empleo, facilitando a las empresas el proceso de reclutamiento. Una característica clave es la barra de búsqueda, que permite a los usuarios filtrar las ofertas de trabajo según el nombre del puesto y el tipo de empleo. Además, el sistema incluye un juego de memorama en el proceso de postulación, diseñado para evaluar y mejorar las habilidades cognitivas de los candidatos de manera divertida e interactiva.",
+  },
+];
+---
+
+<ol class="relative mt-16">
+  {
+    EXPERIENCE.map((experience) => (
+      <li class="">
+        <ExperienceItem {...experience} />
+      </li>
+    ))
+  }
+</ol>
