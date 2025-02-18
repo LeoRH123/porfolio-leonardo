@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 👨🏻‍💻 Porfolio Leonardo Rocca Herrera
 ![porfolio-leonardo](public/porfolio.png)
 
@@ -28,3 +29,7 @@ https://porfolio-leonardo.netlify.app/
 
 Este proyecto está basado en [porfolio.dev](https://github.com/midudev/porfolio.dev) por [Miguel Ángel Durán]. Este trabajo está licenciado bajo la Licencia Attribution-NonCommercial 4.0 International.
 ![porfolio.dev](public/porfolio.webp)
+=======
+# porfolio-leonardo
+Portafolio para mostrar mi experiencia 
+>>>>>>> ea642ff4eccd661bbb7b9cc613fea258e88858a2
